@@ -1,26 +1,17 @@
-import type { StorybookViteConfig } from "@storybook/builder-vite";
-import UnoCSS from "unocss/vite";
-
-const config: StorybookViteConfig = {
-  stories: ["../src/**/*.stories.mdx", "../src/**/*.stories.@(js|jsx|ts|tsx)"],
-  addons: [
-    "@storybook/addon-links",
-    "@storybook/addon-essentials",
-    "@storybook/addon-interactions",
-  ],
-  framework: "@storybook/vue3",
-  core: {
-    builder: "@storybook/builder-vite",
+import type { StorybookConfig } from "@storybook/vue3-vite";
+const config: StorybookConfig = {
+  stories: ["../src/**/*.mdx", "../src/**/*.stories.@(js|jsx|ts|tsx)"],
+  addons: ["@storybook/addon-links", "@storybook/addon-essentials", "@storybook/addon-interactions"],
+  framework: {
+    name: "@storybook/vue3-vite",
+    options: {}
   },
+  core: {},
   features: {
-    storyStoreV7: true,
+    storyStoreV7: true
   },
-  async viteFinal(config, options) {
-    config.plugins.push(UnoCSS({
-      postcss: true
-    }));
-    return config;
+  docs: {
+    autodocs: true,
   },
 };
-
 export default config;
