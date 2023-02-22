@@ -13,4 +13,11 @@ module.exports = {
   parserOptions: {
     ecmaVersion: "latest",
   },
+  "rules": {
+    "vue/multi-word-component-names": 0,
+    "vue/no-v-html": 0,
+    "vue/no-multiple-template-root": 0,
+    // "@typescript-eslint/no-var-requires": 0,
+    // "@typescript-eslint/ban-ts-comment": "off"
+  }
 };
