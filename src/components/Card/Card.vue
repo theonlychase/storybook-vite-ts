@@ -1,5 +1,5 @@
 <script setup lang="ts">
-  interface CardProps {
+  export interface CardProps {
     borderless?: boolean;
     contentClass?: string;
   }
